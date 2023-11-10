@@ -1,0 +1,24 @@
+<% include('../layouts/header.ejs') %>
+<h1>Edit user</h1>
+<%
+ 
+if(typeof message !== 'undefined'){
+  %>
+   <h3><%= message  %></h3>
+  <%
+}
+
+%>
+
+<form action="" method="POST">
+    <input type="name" name="name" required placeholder="Enter Name" value="<%= user.name %>"  required>
+    <br><br>
+    <input type="email" name="email" required placeholder="Enter email" value="<%= user.email %>" required>
+    <br><br>
+    <input type="text" name="mno" required placeholder="Enter Mobile" value="<%= user.mobile %>" required>
+    <br><br>
+    <input type="submit" value="Update User">
+     <input type="hidden" name="id" value="<%= user._id %>">
+</form>
+<a href="/admin">Go Dashboard</a>
+<% include('../layouts/footer.ejs') %> 
